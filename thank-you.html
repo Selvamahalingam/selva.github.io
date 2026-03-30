@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You | Selva - Mechanical Design Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Lato', sans-serif;
+            background: linear-gradient(135deg, #0a0c0f 0%, #1a1f25 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .thankyou-card {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 50px;
+            text-align: center;
+            max-width: 500px;
+            margin: 20px;
+            border: 1px solid rgba(245,158,11,0.3);
+        }
+        .checkmark {
+            width: 80px;
+            height: 80px;
+            background: #f59e0b;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 45px;
+            color: #0a0c0f;
+        }
+        h1 {
+            color: #f59e0b;
+            margin-bottom: 15px;
+            font-size: 28px;
+        }
+        p {
+            color: #ccc;
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        .response-time {
+            background: rgba(245,158,11,0.2);
+            padding: 12px;
+            border-radius: 10px;
+            margin: 20px 0;
+            color: #f59e0b;
+        }
+        .btn {
+            display: inline-block;
+            background: #f59e0b;
+            color: #0a0c0f;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .redirect {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="thankyou-card">
+        <div class="checkmark">✓</div>
+        <h1>Thank You!</h1>
+        <p>Your inquiry has been sent successfully.</p>
+        <div class="response-time">
+            ⚡ I'll respond within 24 hours
+        </div>
+        <p>I've received your project details and will review them shortly.</p>
+        <a href="index.html" class="btn">← Back to Portfolio</a>
+        <div class="redirect">
+            Redirecting to homepage in <span id="countdown">5</span> seconds...
+        </div>
+    </div>
+    <script>
+        let seconds = 5;
+        const countdownEl = document.getElementById('countdown');
+        const timer = setInterval(() => {
+            seconds--;
+            countdownEl.textContent = seconds;
+            if (seconds <= 0) {
+                clearInterval(timer);
+                window.location.href = 'index.html';
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
